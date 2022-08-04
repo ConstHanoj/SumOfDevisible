@@ -1,0 +1,29 @@
+// Sum of 
+void GetInput()
+{
+    Console.WriteLine("We start checking the numbers from 1 till ...");
+    int limit = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Call the first divisible number");
+    int divisible1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Call the second divisible number");
+    int divisible2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("The total sum of numbers from 1 to " + limit + " divisible by " + divisible1 + " and " +
+                      divisible2 +
+                      " is " + sum(divisible1, divisible2, limit));
+}
+
+static int sum(int x, int y, int z)
+{
+    int sum = 0;
+    
+    for (int i = 0; i <= z; i++)
+        if (i % x == 0 || i % y == 0)
+            sum += i;
+    return sum;
+}
+
+GetInput();
+
